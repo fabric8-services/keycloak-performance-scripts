@@ -1,0 +1,1 @@
+GET https://sso.prod-preview.openshift.io/auth/realms/fabric8-test/protocol/openid-connect/userinfo
