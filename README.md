@@ -31,6 +31,54 @@ the variables used in this script.
 
 `$./hey_scripts/hey_kc_perf.sh `
 
+In the following, we show an example of the result of the benchmark that tests the access token:
+
+```
+Getting access token...
+10
+1 requests done.
+2 requests done.
+4 requests done.
+6 requests done.
+8 requests done.
+All requests done.
+
+Summary:
+  Total:        3.4762 secs
+  Slowest:      0.6522 secs
+  Fastest:      0.2417 secs
+  Average:      0.3475 secs
+  Requests/sec: 2.8767
+  Total data:   38690 bytes
+  Size/request: 3869 bytes
+
+Detailed Report:
+
+        DNS+dialup:
+                Average:        0.0207 secs
+                Fastest:        0.0000 secs
+                Slowest:        0.2067 secs
+
+        DNS-lookup:
+                Average:        0.0098 secs
+                Fastest:        0.0000 secs
+                Slowest:        0.0978 secs
+
+        Request Write:
+                Average:        0.0001 secs
+                Fastest:        0.0000 secs
+                Slowest:        0.0002 secs
+
+        Response Wait:
+                Average:        0.3267 secs
+                Fastest:        0.2414 secs
+                Slowest:        0.6521 secs
+
+        Response Read:
+                Average:        0.0001 secs
+                Fastest:        0.0001 secs
+```
+
 ### Vegeta scripts
 
 To run this test, you just simply type this command. Note that, you need to update
@@ -50,6 +98,17 @@ Note that, these benchmarks run with a 300 seconds sleep time in between them to
 
 In the vegeta directory, there is a script that creates reports out of the `.bin`
 files that vegeta generates for each iteration. To run, these files has to be located in the same directory where this script lives.
+
+```
+Requests      [total, rate]            300, 10.03
+Duration      [total, attack, wait]    30.032670403s, 29.899999694s, 132.670709ms
+Latencies     [mean, 50, 95, 99, max]  135.253703ms, 120.603945ms, 215.038853ms, 406.047471ms, 700.119535ms
+Bytes In      [total, mean]            476400, 1588.00
+Bytes Out     [total, mean]            15000, 50.00
+Success       [ratio]                  100.00%
+Status Codes  [code:count]             200:300
+Error Set:
+```
 
 ### Wrk scripts
 
